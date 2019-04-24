@@ -24,6 +24,7 @@
     justify-items: center;
     align-items:center;
     flex-direction: row;
+    
 }
 
 .titlebar
@@ -73,7 +74,7 @@
 .tab
 {
     height:50px;
-    width:152px;
+    width: 10%;
     text-align: center;
     color: white;
     display:flex;
@@ -85,7 +86,7 @@
 .tab-static
 {
     height:50px;
-    width:152px;
+    width:10%;
     text-align: center;
     color: white;
     display:flex;
@@ -97,7 +98,7 @@
 .tab-empty
 {
     height:50px;
-    width:152px;   
+    width:10%;   
 }
 
 .tab:hover
