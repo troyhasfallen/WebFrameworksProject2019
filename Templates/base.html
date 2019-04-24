@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}AetherMail{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+  {% block style %}{% endblock %}
+</head>
+<body>
+  <main>
+
+    <div class="titlebar">
+        <div class="title">
+            <span style="font-family:Cinzel Decorative Bold">A</span>ether
+            <span style="font-family:Cinzel Decorative Bold">M</span>ail
+        </div>
+        <div class="username">
+            {% block username %}{% endblock %}
+        </div>
+    </div>
+
+    <div class='topbar'>
+        <div class='{% block tab1-class %}{% endblock %}'>{% block tab1-content %}{% endblock %}</div>
+        <div class='{% block tab2-class %}{% endblock %}'>{% block tab2-content %}{% endblock %}</div>
+        <div class='{% block tab3-class %}{% endblock %}'>{% block tab3-content %}{% endblock %}</div>
+        <div class='{% block tab4-class %}{% endblock %}'>{% block tab4-content %}{% endblock %}</div>
+        <div class='{% block tab5-class %}{% endblock %}'>{% block tab5-content %}{% endblock %}</div>
+        <div class='{% block tab6-class %}{% endblock %}'>{% block tab6-content %}{% endblock %}</div>
+        <div class='{% block tab7-class %}{% endblock %}'>{% block tab7-content %}{% endblock %}</div>
+        <div class='{% block tab8-class %}{% endblock %}'>{% block tab8-content %}{% endblock %}</div>
+        <div class='{% block tab9-class %}{% endblock %}'>{% block tab9-content %}{% endblock %}</div>
+        <div class='{% block tab10-class %}{% endblock %}'>{% block tab10-content %}{% endblock %}</div>
+
+    </div>
+
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

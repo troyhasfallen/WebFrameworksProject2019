@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <div class="fullpage">
+      <div class="generic-header">Sign up</div>
+      <div class="form-subdiv-2">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="generic-button-1" style="margin-left: 40%; margin-bottom: 5%; margin-top: 3%;" type="submit">Sign up</button>
+            
+        </form>
+      </div>
+      
+      <a class="generic-button-2" style="margin-top: 2%; margin-bottom: 5.8%" href="{% url 'login' %}">Login</a>
+  </div>
+{% endblock %}

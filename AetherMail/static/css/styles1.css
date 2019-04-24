@@ -1,0 +1,536 @@
+/*@import 'https://fonts.googleapis.com/css?family=Cinzel Decorative'; */
+
+@font-face 
+{
+    font-family: 'Cinzel Decorative Bold';
+    src: URL('CinzelDecorative-Bold.ttf') format('truetype');
+}
+ 
+@font-face 
+{
+    font-family: 'Cinzel Decorative Regular';
+    src: URL('CinzelDecorative-Regular.ttf') format('truetype');
+}
+
+.topbar
+{
+    padding: 0px;
+    width: 100%;
+    height: 50px;
+    margin-top:0px;
+    /*position: fixed;*/
+    background-color: #00564c;
+    display: flex;
+    justify-items: center;
+    align-items:center;
+    flex-direction: row;
+}
+
+.titlebar
+{
+    padding: 0px;
+    width: 100%;
+    height: 70px;
+    margin-top:0px;
+    /*position: fixed;*/
+    background-color: #0c8678;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    align-items:center;
+    flex-direction: row;
+    
+}
+
+.title
+{
+    height:70px;
+    width:300;
+    text-align: center;
+    color: white;
+    font-family: 'Cinzel Decorative Regular';
+    font-size: 30px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding-left: 23px;
+
+}
+
+.username
+{
+    height:70;
+    width:300;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding-right: 55px;
+}
+
+.tab
+{
+    height:50px;
+    width:152px;
+    text-align: center;
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top: 0px;
+}
+
+.tab-static
+{
+    height:50px;
+    width:152px;
+    text-align: center;
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top: 0px;
+}
+
+.tab-empty
+{
+    height:50px;
+    width:152px;   
+}
+
+.tab:hover
+{
+    background-color: #0c8678;
+}
+
+.tab-selected
+{
+    background-color: #0c8678;
+}
+
+a.tab-link:link, a.tab-link:visited
+{
+    color:white;
+    text-decoration: none;
+}
+
+.not-logged-in
+{
+    font-size: 100px;
+}
+
+
+.mail-bar
+{
+    padding: 0px;
+    width: 100%;
+    height: 43px;
+    margin-top:20px;
+    /*position: fixed;*/
+    background-color: #00564c;
+    display: flex;
+    justify-items: center;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction: row;
+    
+}
+
+.mail-tab
+{
+    height:43px;
+    width:152px;
+    text-align: center;
+    padding-left: 48px ;
+    color: white;
+    display:flex;
+    align-items:center;
+    /*justify-content:center;*/
+    margin-top: 0px;
+}
+
+.mail-tab-empty
+{
+    height:43px;
+    width:152px;   
+}
+
+.mail-packet
+{
+    padding: 0px;
+    width: 100%;
+    height: 40px;
+    margin-top:10px;
+    /*position: fixed;*/
+    border:solid #00564c 2px;
+    color: #00564c;
+    display: flex;
+    justify-items: center;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction: row;
+}
+
+.unread
+{
+    background-color: #c3f0ea;
+}
+
+.mail-packet-tab
+{
+    height:40px;
+    width:152px;
+    text-align: left;
+    padding-left: 48px ;
+    
+    display:flex;
+    align-items:center;
+    /*justify-content:center;*/
+    margin-top: 0px;
+}
+
+.mail-packet-tab-empty
+{
+    height:40px;
+    width:152px;   
+}
+
+.mail-packet:hover
+{
+    background-color: #00564c;
+    color: white;
+}
+
+a.mail-packet-tab-read-button:link, a.mail-packet-tab-read-button:visited 
+{
+    background-color: white;
+    color: #860c4f;
+    border:solid #860c4f 1px;
+    border-radius:3px;
+    padding-top:1px;
+    width: 75px;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.mail-packet-tab-read-button:hover
+{
+    background-color: #860c4f;
+    color: white;
+}
+
+a.mail-packet-tab-delete-button:link, a.mail-packet-tab-delete-button:visited 
+{
+    background-color: white;
+    color: #860c12;
+    border:solid #860c12 1px;
+    border-radius:3px;
+    padding-top:1px;
+    width: 75px;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.mail-packet-tab-delete-button:hover
+{
+    background-color: #860c12;
+    color: white;
+}
+
+.message-container
+{
+    width:100%;
+    height:100%;
+    margin-top: 20px;
+    margin-right:0%;
+    border-top: solid #00564c 2px;
+    border-left: solid #00564c 2px;
+    border-radius: 5px;
+    padding-left: 46px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display:flex;
+    flex-direction: column;
+}
+
+.message-container-tab
+{
+    width:100%;
+    height:60px;
+    text-align: center;
+    padding-left: 0px ;
+    margin-left: 0px;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    /*justify-content:center;*/
+    margin-top: 0px;
+    color:  #00564c;
+
+}
+
+.message-sub-head
+{
+    font-size:24px;
+}
+
+.message-body
+{
+    font-size:20px;
+}
+
+a.message-delete-button:link, a.message-delete-button:visited 
+{
+    background-color: white;
+    color: #860c12;
+    border:solid #860c12 1px;
+    border-radius:3px;
+    padding-top:1px;
+    width: 75px;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.message-delete-button:hover
+{
+    background-color: #860c12;
+    color: white;
+}
+
+
+
+#id_from_user, #id_timestamp, #id_read_status, #id_received_trash_status, #id_sent_trash_status
+{
+    display:none;
+}
+
+
+.send-button 
+{
+    background-color: white;
+    color: #860c4f;
+    border:solid #860c4f 1px;
+    border-radius:3px;
+    margin-left: 86.8%;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.send-button:hover
+{
+    background-color: #860c4f;
+    color: white;
+}
+
+.compose-container
+{
+    width:100%;
+    height:100%;
+    margin-top: 20px;
+    margin-right:0%;
+    border-top: solid #00564c 2px;
+    border-left: solid #00564c 2px;
+    color: #00564c ;
+    font-size: 24px;
+    border-radius: 5px;
+    padding-left: 46px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display:flex;
+    flex-direction: column;
+}
+
+#id_to_user
+{
+    margin-left: 51px;
+}
+
+#id_subject
+{
+    margin-left: 5px;
+}
+
+#id_to_user, #id_subject
+{
+    height: 23px;
+    width: 800px;
+    color: #00564c;
+    border-bottom:solid #00564c 1px;
+    border-top:solid white 1px;
+    border-left:solid white 1px;
+    border-right:solid white 1px;
+    font-size:20px;
+    outline: none;
+}
+
+#id_body
+{
+    
+    width: 92.8%;
+    border:solid #00564c 1px;
+    border-radius: 3px;
+    font-size:20px;
+    color: #00564c;
+}
+
+.fullpage
+{
+    background-color: #00564c;
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a.generic-button-a:link, a.generic-button-a:visited
+{
+    background-color: white;
+    color: #860c4f;
+    border:solid #860c4f 1px;
+    border-radius:3px;
+    margin-left: 40%;
+    margin-top: 10%;
+    padding-top: 10px;
+    width: 300px;
+    height: 43px;
+    font-size: 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.generic-button-a:hover
+{
+    background-color: #860c4f;
+    color: white;
+}
+
+.generic-header
+{
+    align-self: center;
+    color:white;
+    font-size: 30px;
+}
+
+.form-subdiv-1
+{
+    background-color: white;
+    color: #00564c;
+    font-size: 20px;
+    margin-top: 40px;
+    width: 370px;
+    align-self:center;
+    padding-left: 6%; 
+    padding-top: 1%;
+    border: solid white 2px;
+    border-radius: 3px;
+
+}
+
+.generic-button-1
+{
+    background-color: white;
+    color: #860c4f;
+    border:solid #860c4f 1px;
+    border-radius:3px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 24%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.generic-button-1:hover
+{
+    background-color: #860c4f;
+    color: white;
+}
+
+#id_username, #id_password, #id_password1, #id_password2 
+{
+    height: 20px;
+    font-size: 15px;
+    color: #00564c;
+    border-bottom:solid #00564c 1px;
+    border-top:solid white 1px;
+    border-left:solid white 1px;
+    border-right:solid white 1px;
+}
+
+#id_username
+{
+    margin-left: 5px;
+}
+
+#id_password
+{
+    margin-left: 9px;
+}
+
+
+a.generic-button-2:link, a.generic-button:visited
+{
+    background-color: white;
+    color: #860c4f;
+    border:solid #860c4f 1px;
+    border-radius:3px;
+    align-self: center;
+    margin-top: 10%;
+    margin-bottom: 9.15%;
+    padding-top: 4px;
+    width: 180px;
+    height: 31px;
+    font-size: 21px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+a.generic-button-2:hover
+{
+    background-color: #860c4f;
+    color: white;
+}
+
+
+
+.form-subdiv-2
+{
+    background-color: white;
+    color: #00564c;
+    font-size: 20px;
+    margin-top: 40px;
+    width: 930px;
+    align-self:center;
+    padding-left: 6%; 
+    padding-top: 1%;
+    border: solid white 2px;
+    border-radius: 3px;
+
+}
+
+#id_password1, #id_password2
+{
+    margin-left: 5px;
+}

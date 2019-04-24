@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Mail - {{ msg.subject }}{% endblock %}
+
+{% block username %}{{ user.username }}{% endblock %}
+
+{% block tab1-class %}tab{% endblock %} {% block tab1-content %}<a class='tab-link' href="{% url 'compose' %}">Compose</a>{% endblock %}
+{% block tab2-class %}tab tab-selected{% endblock %} {% block tab2-content %}<a class='tab-link' href="{% url 'inbox' %}">Inbox</a>{% endblock %}
+{% block tab3-class %}tab{% endblock %} {% block tab3-content %}<a class='tab-link' href="{% url 'sent' %}">Sent</a>{% endblock %}
+{% block tab4-class %}tab{% endblock %} {% block tab4-content %}<a class='tab-link' href="{% url 'trash' %}">Trash</a>{% endblock %}
+{% block tab5-class %}tab-empty{% endblock %}
+{% block tab6-class %}tab-empty{% endblock %} 
+{% block tab7-class %}tab-empty{% endblock %} 
+{% block tab8-class %}tab-empty{% endblock %} 
+{% block tab9-class %}tab-empty{% endblock %} 
+{% block tab10-class %}tab{% endblock %} {% block tab10-content %}<a class='tab-link' href="{% url 'logout' %}">Logout</a>{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+    {% if user.is_authenticated %}
+
+        
+
+        <div class="message-container">
+            {% if msg.timestamp %}
+                <div class="message-container-tab">
+                    <div style="margin-right:77.5%;">{{ msg.timestamp }}</div>
+                    <div><a class="message-delete-button" href="{% url 'delete_from_inbox' pk=msg.pk %}">Delete</a></div>
+                </div>
+            {% else %}
+                <div class="message-container-tab">
+                    
+                    <div><a href="{% url 'delete_from_inbox' pk=msg.pk %}">Delete</a></div>
+                </div>
+            {% endif %}
+
+            <div class="message-container-tab message-sub-head"><div style="width:8%; text-align: start;">From</div>: {{ msg.from_user }}</div>
+            <div class="message-container-tab message-sub-head"><div style="width:8%; text-align: start;">Subject</div>: {{ msg.subject }}</div>
+            <div class="message-container-tab message-body">{{ msg.body|linebreaksbr }}</div>
+            
+            
+            
+
+        </div>
+
+
+
+
+
+    {% else %}
+        <meta http-equiv="REFRESH" content="0;url=http://127.0.0.1:8000">
+        <div class="not-logged-in">You are not logged in</div>
+        
+        
+        
+    {% endif %}
+
+
+
+    
+{% endblock %}

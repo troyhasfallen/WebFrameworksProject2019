@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}!</br>
+        <a href="{% url 'new_msg' %}">xxx</a>
+
+        <p><a href="{% url 'logout' %}">logout</a></p>
+
+
+        {% for msg in messages %}
+            <div>
+                <p>Timestamp: {{ msg.timestamp }}</p>
+                <p>From: {{ msg.from_user }}</p>
+                <p>To: {{ msg.to_user }}</p>
+                <h2>{{ msg.subject }}</h2>
+                <p>{{ msg.body|linebreaksbr }}</p>
+                <p>________________________________________________________________________</p>
+            </div>
+        {% endfor %}
+
+
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
+
+
+
+{% endblock %}
+
+
+<!--<html>
+    <head>
+        <title>Message List</title>
+    </head>
+    <body>
+        
+        {% if user.is_authenticated %}
+            Hi {{ user.username }}!</br>
+            <a href="{% url 'new_msg' %}">xxx</a>
+        
+        
+        
+        
+            {% for msg in messages %}
+                <div>
+                    <p>Timestamp: {{ msg.timestamp }}</p>
+                    <h2>{{ msg.subject }}</h2>
+                    <p>{{ msg.body|linebreaksbr }}</p>
+                    <p>________________________________________________________________________</p>
+                </div>
+            {% endfor %}
+        
+        
+            {% else %}
+            <p>You are not logged in</p>
+            <a href="{% url 'login' %}">login</a>
+        {% endif %}
+        
+        
+        
+        
+    </body>
+
+</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

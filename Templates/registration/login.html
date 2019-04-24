@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="fullpage">
+        <div class="generic-header">Login</div>
+            <div class="form-subdiv-1">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="generic-button-1" type="submit">Login</button><br/>
+                
+                </form>
+            </div>
+        <a class="generic-button-2"  href="{% url 'signup' %}">SignUp</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}Sent{% endblock %}
+
+{% block username %}{{ user.username }}{% endblock %}
+
+{% block tab1-class %}tab{% endblock %} {% block tab1-content %}<a class='tab-link' href="{% url 'compose' %}">Compose</a>{% endblock %}
+{% block tab2-class %}tab{% endblock %} {% block tab2-content %}<a class='tab-link' href="{% url 'inbox' %}">Inbox</a>{% endblock %}
+{% block tab3-class %}tab{% endblock %} {% block tab3-content %}<a class='tab-link' href="{% url 'sent' %}">Sent</a>{% endblock %}
+{% block tab4-class %}tab tab-selected{% endblock %} {% block tab4-content %}<a class='tab-link' href="{% url 'trash' %}">Trash</a>{% endblock %}
+{% block tab5-class %}tab-empty{% endblock %}
+{% block tab6-class %}tab-empty{% endblock %} 
+{% block tab7-class %}tab-empty{% endblock %} 
+{% block tab8-class %}tab-empty{% endblock %} 
+{% block tab9-class %}tab-empty{% endblock %} 
+{% block tab10-class %}tab{% endblock %} {% block tab10-content %}<a class='tab-link' href="{% url 'logout' %}">Logout</a>{% endblock %}
+
+
+
+
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+        <div class="mail-bar">
+            <div class="mail-tab">From</div>
+            <div class="mail-tab-empty" style='width:70px;'></div>
+            <div class="mail-tab">To</div>
+            <div class="mail-tab-empty" style='width:70px;'></div>
+            <div class="mail-tab">Subject</div>
+            <div class="mail-tab-empty" style='width:270px;'></div>
+            <div class="mail-tab">Time</div>
+        </div>
+
+        {% for msg in messages %}
+            {% if msg.read_status == 'U' or msg.read_status == 'u' %}
+                {% if msg.to_user == user.username %}
+                    <div class='mail-packet unread'>
+                        
+                        <div class="mail-packet-tab" style='width:222px;'>{{ msg.from_user }}</div>
+                        <div class="mail-packet-tab" style='width:222px;'>{{ msg.to_user }}</div>
+                        <div class="mail-packet-tab" style='width:423px;'>{{ msg.subject }}</div>
+                        <div class="mail-packet-tab" style='width:250px'>{{ msg.timestamp }}</div>
+                        <div class="mail-packet-tab-empty" style='width:35px;'></div>
+                        <div class="mail-packet-tab" style='width:100px;'><a class="mail-packet-tab-read-button" href="{% url 'read_trash_msg' pk=msg.pk %}">Read</a></div>
+                        
+                    
+                    </div>
+                {% else %}
+                    <div class='mail-packet'>
+                    
+                        <div class="mail-packet-tab" style='width:222px;'>{{ msg.from_user }}</div>
+                        <div class="mail-packet-tab" style='width:222px;'>{{ msg.to_user }}</div>
+                        <div class="mail-packet-tab" style='width:423px;'>{{ msg.subject }}</div>
+                        <div class="mail-packet-tab" style='width:250px'>{{ msg.timestamp }}</div>
+                        <div class="mail-packet-tab-empty" style='width:35px;'></div>
+                        <div class="mail-packet-tab" style='width:100px;'><a class="mail-packet-tab-read-button" href="{% url 'read_trash_msg' pk=msg.pk %}">Read</a></div>
+                        
+                    
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class='mail-packet'>
+                    
+                    <div class="mail-packet-tab" style='width:222px;'>{{ msg.from_user }}</div>
+                    <div class="mail-packet-tab" style='width:222px;'>{{ msg.to_user }}</div>
+                    <div class="mail-packet-tab" style='width:423px;'>{{ msg.subject }}</div>
+                    <div class="mail-packet-tab" style='width:250px'>{{ msg.timestamp }}</div>
+                    <div class="mail-packet-tab-empty" style='width:35px;'></div>
+                    <div class="mail-packet-tab" style='width:100px;'><a class="mail-packet-tab-read-button" href="{% url 'read_trash_msg' pk=msg.pk %}">Read</a></div>
+                    
+                
+                </div>
+            {% endif %}
+        {% endfor %}
+
+
+    {% else %}
+        <meta http-equiv="REFRESH" content="0;url=http://127.0.0.1:8000">
+        <div class="not-logged-in">You are not logged in</div>
+            
+            
+        
+    {% endif %}
+{% endblock %}
