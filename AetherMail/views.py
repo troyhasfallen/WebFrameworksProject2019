@@ -9,16 +9,6 @@ from django.views import generic
 
 # Create your views here.
 
-def message_list(request):
-    usn = request.user.username
-    messages = Message.objects.order_by('-timestamp')
-    return render(request, 'AetherMail/message_list.html', {'messages':messages})
-
-def read_msg(request, pk):
-    message = get_object_or_404(Message, pk=pk)
-    return render(request, 'AetherMail/read_msg.html', {'msg': message})
-
-
 
 
 
